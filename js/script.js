@@ -1,18 +1,63 @@
-a = "xyaabbbccccdefww"
-b = "xxxxyyyyabklmopq"
+let someDna = "TGACCGTCCGCC";
 
-function longest(s1, s2) {
-    console.log(Array.from(new Set(s1 + s2)).sort().join());
+function DNAtoRNA(dna) {
+    return dna.replace(/T/g, "U");
 }
-
-  longest(a,b);
-
+  DNAtoRNA(someDna);
 /** 
- ____________________________________________________
+ * __________________________________________________________
+ *
 
- Take 2 strings s1 and s2 including only letters from a to z.
-  Return a new sorted string, the longest possible, containing
-   distinct letters - each taken only once - coming from s1 or s2.
+Create a function which translates a given DNA string into RNA.
+
+For example:
+
+"GCAT"  =>  "GCAU"
+The input string can be of arbitrary length - in particular, it may be empty. 
+All input is guaranteed to be valid, i.e. each input string will only ever consist 
+of 'G', 'C', 'A' and/or 'T'.
+
+Sol:
+
+
+
+__________________________________________________________
+
+Your task is to convert strings to how they would be written 
+by Jaden Smith. The strings are actual quotes from Jaden Smith, 
+but they are not capitalized in the same way he originally typed them.
+
+Sol:
+
+let Jaden = "How can mirrors be real if our eyes aren't real";
+
+function toJadenCase(str) {
+    console.log(str.split(' ').map(item => item[0].toUpperCase() + item.slice(1)).join(' '));
+};
+
+
+toJadenCase(Jaden);
+
+
+__________________________________________________________
+We need a function that can transform a number into a string.
+
+What ways of achieving this do you know?
+
+Examples:
+123 --> "123"
+999 --> "999"
+
+Sol:
+
+function numberToString(num) {
+  return num.toString();
+}
+__________________________________________________________
+
+Take 2 strings s1 and s2 including only letters from a to z.
+Return a new sorted string, the longest possible, containing
+distinct letters - each taken only once - coming from s1 or s2.
 
 Examples:
 a = "xyaabbbccccdefww"
@@ -24,16 +69,23 @@ longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
 Sol:
 
+a = "xyaabbbccccdefww"
+b = "xxxxyyyyabklmopq"
 
+function longest(s1, s2) {
+    console.log(Array.from(new Set(s1 + s2)).sort().join());
+}
 
- ___________________________________________________
+longest(a,b);
 
- There was a test in your class and you passed it. Congratulations!
+___________________________________________________
+
+There was a test in your class and you passed it. Congratulations!
 But you're an ambitious person. You want to know if you're better
- than the average student in your class.
+than the average student in your class.
 
 You receive an array with your peers' test scores. Now calculate
- the average and compare your score!
+the average and compare your score!
 
 Return True if you're better, else False!
 
