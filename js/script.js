@@ -1,27 +1,13 @@
-gamesArr = ["1:2","2:2","3:4","4:3","2:2","3:3","5:4","3:3","4:4","1:4"];
-
-function points(games) {
-    let points = 0;
-    for (let i = 0; i < games.length; i++) {
-        
-        let x = games[i].charAt(0);
-        let y = games[i].charAt(2);
-        
-        if (x > y) {
-            points = points + 3;
-        } else if (x == y ){
-            points = points + 1;
-        }
-
-    }
-return points;
-}
-
-  points(gamesArr);
- 
-
+function boolToWord( bool ){
+    return bool ? "Yes" : "No"
+  }
 /** 
- * 
+ 
+_________________________________________________________
+Complete the method that takes a boolean value and return a "Yes" 
+string for true, or a "No" string for false.
+
+Sol:
 __________________________________________________________
 Our football team finished the championship. The result of each
 match look like "x:y". Results of all matches are recorded in the 
@@ -39,7 +25,27 @@ if x=y - 1 point
 
 Sol: 
 
+gamesArr = ["1:2","2:2","3:4","4:3","2:2","3:3","5:4","3:3","4:4","1:4"];
 
+function points(games) {
+    let points = 0;
+    for (let i = 0; i < games.length; i++) {
+        
+        let x = games[i][0];
+        let y = games[i][2];
+        
+        if (x > y) {
+            points = points + 3;
+        } else if (x == y ){
+            points = points + 1;
+        }
+
+    }
+console.log(points);
+}
+
+  points(gamesArr);
+ 
 
 __________________________________________________________
  * 
