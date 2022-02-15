@@ -1,3 +1,50 @@
+let busStops = [[10,0],[3,5],[5,8]];
+
+
+function getNumber(stops){
+    let totapPeople = 0;
+    for (let i = 0; i < stops.length; i++) {
+        totapPeople += stops[i][0];
+        totapPeople -= stops[i][1];
+    }
+     console.log(totapPeople);
+  }
+
+  getNumber(busStops);
+
+
+/** 
+_________________________________________________________
+There is a bus moving in the city, and it takes and drop some people in 
+each bus stop.
+
+You are provided with a list (or array) of integer pairs. Elements of 
+each pair represent number of people get into bus (The first item) and 
+number of people get off the bus (The second item) in a bus stop.
+
+Your task is to return number of people who are still in the bus after 
+the last bus station (after the last array). Even though it is the last 
+bus stop, the bus is not empty and some people are still in the bus, and 
+they are probably sleeping there :D
+
+Take a look on the test cases.
+
+Please keep in mind that the test cases ensure that the number of people 
+in the bus is always >= 0. So the return integer can't be negative.
+
+The second value in the first integer array is 0, since the bus is empty 
+in the first bus stop.
+
+Sol:
+
+_________________________________________________________
+Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) 
+that checks whether the two arrays have the "same" elements, with the same 
+multiplicities (the multiplicity of a member is the number of times it appears). 
+"Same" means, here, that the elements in b are the elements in a squared, 
+regardless of the order.
+
+Sol: 
 a = [121, 144, 19, 161, 19, 144, 19, 11]  
 b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
 
@@ -9,16 +56,6 @@ function comp(array1, array2){
 }
 
 comp(a, b);
-/** 
-_________________________________________________________
-Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) 
-that checks whether the two arrays have the "same" elements, with the same 
-multiplicities (the multiplicity of a member is the number of times it appears). 
-"Same" means, here, that the elements in b are the elements in a squared, 
-regardless of the order.
-
-Sol: 
-
 
 _________________________________________________________
 Complete the method that takes a boolean value and return a "Yes" 
