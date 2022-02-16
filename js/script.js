@@ -1,19 +1,61 @@
-let busStops = [[10,0],[3,5],[5,8]];
+let a = [5, 8, 6, 3, 4];
 
-
-function getNumber(stops){
-    let totapPeople = 0;
-    for (let i = 0; i < stops.length; i++) {
-        totapPeople += stops[i][0];
-        totapPeople -= stops[i][1];
+function sortArray(array) {
+    let evenArr = [];
+    let oddArr = [];
+    let result = [];
+    for(let i = 0; i < array.length; i++) {
+        if (array[i]%2 === 0){
+            evenArr.push(array[i]);
+        } else {
+            oddArr.push(array[i]);
+        }
     }
-     console.log(totapPeople);
-  }
+    oddArr.sort((a , b) => a - b);
+    for (let i = 0; i < array.length; i ++) {
+        if (array[i]%2 === 0) {
+            result.push(evenArr.shift());
+        } else {
+            result.push(oddArr.shift());
+        } 
+    }
+    console.log(result);
+}
 
-  getNumber(busStops);
-
+sortArray(a);
 
 /** 
+_________________________________________________________
+You will be given an array of numbers. You have to sort the odd numbers 
+in ascending order while leaving the even numbers at their original 
+positions.
+
+Sol: 
+let a = [5, 8, 6, 3, 4];
+
+function sortArray(array) {
+    let evenArr = [];
+    let oddArr = [];
+    let result = [];
+    for(let i = 0; i < array.length; i++) {
+        if (array[i]%2 === 0){
+            evenArr.push(array[i]);
+        } else {
+            oddArr.push(array[i]);
+        }
+    }
+    oddArr.sort((a , b) => a - b);
+    for (let i = 0; i < array.length; i ++) {
+        if (array[i]%2 === 0) {
+            result.push(evenArr.shift());
+        } else {
+            result.push(oddArr.shift());
+        } 
+    }
+    console.log(result);
+}
+
+sortArray(a);
 _________________________________________________________
 There is a bus moving in the city, and it takes and drop some people in 
 each bus stop.
@@ -36,6 +78,19 @@ The second value in the first integer array is 0, since the bus is empty
 in the first bus stop.
 
 Sol:
+let busStops = [[10,0],[3,5],[5,8]];
+
+
+function getNumber(stops){
+    let totapPeople = 0;
+    for (let i = 0; i < stops.length; i++) {
+        totapPeople += stops[i][0];
+        totapPeople -= stops[i][1];
+    }
+     console.log(totapPeople);
+  }
+
+  getNumber(busStops);
 
 _________________________________________________________
 Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) 
