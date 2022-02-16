@@ -1,30 +1,19 @@
-let a = [5, 8, 6, 3, 4];
-
-function sortArray(array) {
-    let evenArr = [];
-    let oddArr = [];
-    let result = [];
-    for(let i = 0; i < array.length; i++) {
-        if (array[i]%2 === 0){
-            evenArr.push(array[i]);
-        } else {
-            oddArr.push(array[i]);
-        }
-    }
-    oddArr.sort((a , b) => a - b);
-    for (let i = 0; i < array.length; i ++) {
-        if (array[i]%2 === 0) {
-            result.push(evenArr.shift());
-        } else {
-            result.push(oddArr.shift());
-        } 
-    }
-    console.log(result);
+function check(a, x) {
+    return a.includes(x);
 }
 
-sortArray(a);
-
 /** 
+_________________________________________________________
+You will be given an array a and a value x. All you need to do is check
+ whether the provided array contains the value.
+
+Array can contain numbers or strings. X can be either.
+
+Return true if the array contains the value, false if not.
+
+Sol:
+
+
 _________________________________________________________
 You will be given an array of numbers. You have to sort the odd numbers 
 in ascending order while leaving the even numbers at their original 
@@ -56,6 +45,11 @@ function sortArray(array) {
 }
 
 sortArray(a);
+
+function sortArray(array) {
+    let odd = array.filter((x)=>x%2).sort((a,b)=>a-b);
+    return array.map((x)=>x%2 ? odd.shift : x); 
+}
 _________________________________________________________
 There is a bus moving in the city, and it takes and drop some people in 
 each bus stop.
