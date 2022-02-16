@@ -1,8 +1,25 @@
-function check(a, x) {
-    return a.includes(x);
-}
+let str = 'a b mannnoooo i need a taxi up to ubud z zz';
 
+function high(x){
+    let as = x.split(' ').map(x=>[...x].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
+    console.log(x.split(' ')[as.indexOf(Math.max(...as))]);
+}
+high(str);
 /** 
+_________________________________________________________
+Given a string of words, you need to find the highest scoring word.
+
+Each letter of a word scores points according to its position in the 
+alphabet: a = 1, b = 2, c = 3 etc.
+
+You need to return the highest scoring word as a string.
+
+If two words score the same, return the word that appears earliest in 
+the original string.
+
+All letters will be lowercase and all inputs will be valid.
+Sol: 
+
 _________________________________________________________
 You will be given an array a and a value x. All you need to do is check
  whether the provided array contains the value.
@@ -12,7 +29,9 @@ Array can contain numbers or strings. X can be either.
 Return true if the array contains the value, false if not.
 
 Sol:
-
+function check(a, x) {
+    return a.includes(x);
+}
 
 _________________________________________________________
 You will be given an array of numbers. You have to sort the odd numbers 
