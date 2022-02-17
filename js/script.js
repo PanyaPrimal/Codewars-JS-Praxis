@@ -1,11 +1,32 @@
-let str = 'a b mannnoooo i need a taxi up to ubud z zz';
+let test1 = "aabBcdeIndivisibilitiessaaawWW";
+function duplicateCount(text){
+    let text1 = text.toLowerCase().split('').filter(function(val, i, arr){
+        return arr.indexOf(val) !==i && arr.lastIndexOf(val) === i;
+    }).length;
+    console.log(text1);
+  }
 
-function high(x){
-    let as = x.split(' ').map(x=>[...x].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
-    console.log(x.split(' ')[as.indexOf(Math.max(...as))]);
-}
-high(str);
+  duplicateCount(test1);
 /** 
+ 
+
+_________________________________________________________
+Count the number of Duplicates
+Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+Example
+"abcde" -> 0 # no characters repeats more than once
+"aabbcde" -> 2 # 'a' and 'b'
+Sol: 
+let test1 = "aabBcdeIndivisibilitiessaaawWW";
+function duplicateCount(text){
+    let text1 = text.toLowerCase().split('').filter(function(val, i, arr){
+        return arr.indexOf(val) !==i && arr.lastIndexOf(val) === i;
+    }).length;
+    console.log(text1);
+  }
+
+  duplicateCount(test1);
 _________________________________________________________
 Given a string of words, you need to find the highest scoring word.
 
@@ -19,7 +40,13 @@ the original string.
 
 All letters will be lowercase and all inputs will be valid.
 Sol: 
+let str = 'a b mannnoooo i need a taxi up to ubud z zz';
 
+function high(x){
+    let as = x.split(' ').map(x=>[...x].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
+    console.log(x.split(' ')[as.indexOf(Math.max(...as))]);
+}
+high(str);
 _________________________________________________________
 You will be given an array a and a value x. All you need to do is check
  whether the provided array contains the value.
