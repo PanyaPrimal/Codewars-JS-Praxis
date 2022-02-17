@@ -1,15 +1,25 @@
-let test1 = "aabBcdeIndivisibilitiessaaawWW";
-function duplicateCount(text){
-    let text1 = text.toLowerCase().split('').filter(function(val, i, arr){
-        return arr.indexOf(val) !==i && arr.lastIndexOf(val) === i;
-    }).length;
-    console.log(text1);
+
+function repeatStr (n, s) {
+    
+    console.log(s.repeat(n));
   }
 
-  duplicateCount(test1);
-/** 
- 
+  repeatStr(5, "I");
 
+/** 
+_________________________________________________________
+Write a function called repeatStr which repeats the given string string exactly 
+n times.
+
+repeatStr(6, "I") // "IIIIII"
+repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
+Sol:
+function repeatStr (n, s) {
+    
+    console.log(s.repeat(n));
+  }
+
+  repeatStr(5, "I");
 _________________________________________________________
 Count the number of Duplicates
 Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
