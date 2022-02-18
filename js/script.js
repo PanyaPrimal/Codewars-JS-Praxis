@@ -1,9 +1,19 @@
-let faces = [':D',':~)',';~D',':)',':O',':;']; //4
-function countSmileys(arr) {
-    return arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
+let test = 'camelCasingTest';
+
+function solution(string) {
+   console.log(string.replace(/([A-Z])/g, ' $1'));
 }
-countSmileys(faces);
+
+solution(test);
+
+
+
 /** 
+_________________________________________________________
+Complete the solution so that the function will break up camel casing, using a 
+space between words.
+Sol:
+
 _________________________________________________________
 Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
 
