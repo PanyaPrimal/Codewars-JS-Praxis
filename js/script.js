@@ -1,3 +1,66 @@
+
+/** 
+_________________________________________________________
+3. Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever 
+you are employed and the second parameter, vacation is true whenever you are on vacation.
+
+The function should return true if you are employed and not on vacation (because these are the circumstances under 
+which you need to set an alarm). It should return false otherwise. Examples:
+
+Sol:
+
+function setAlarm(employed, vacation){
+    if (employed == true && vacation == false) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+}
+
+setAlarm(true, true);
+
+
+_________________________________________________________
+2. The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns 
+it in cm per second, rounded down to the integer (= floored).
+
+For example:
+
+1.08 --> 30
+Note! The input is a Real number (actual type is language dependent) and is >= 0. The result should be an Integer.
+Sol: 
+function cockroachSpeed(s) {
+    return s * 100000 / (60 * 60)
+}
+
+
+cockroachSpeed(1.08);
+_________________________________________________________
+1. Grade book
+Complete the function so that it finds the average of the three scores passed to it and returns the letter value 
+associated with that grade.
+
+Numerical Score	Letter Grade
+90 <= score <= 100	'A'
+80 <= score < 90	'B'
+70 <= score < 80	'C'
+60 <= score < 70	'D'
+0 <= score < 60	'F'
+Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
+
+Sol:
+
+function getGrade (s1, s2, s3) {
+    let s = (s1 + s2 + s3)/3;
+    console.log(s >= 90 ? 'A' : s >= 80 ? 'B' : s >= 70 ? 'C' : s >= 60 ? 'D' : 'F') 
+  }
+
+
+getGrade(75,100,79);
+_________________________________________________________
+Complete the solution so that the function will break up camel casing, using a 
+space between words.
+Sol:
 let test = 'camelCasingTest';
 
 function solution(string) {
@@ -6,13 +69,15 @@ function solution(string) {
 
 solution(test);
 
-
-
-/** 
-_________________________________________________________
-Complete the solution so that the function will break up camel casing, using a 
-space between words.
-Sol:
+function solution(string) {
+  string = string.split('').map(function (el) {
+    if (el === el.toUpperCase()) {
+      el = ' ' + el
+    }
+    return el
+  })
+  return string.join('')
+}
 
 _________________________________________________________
 Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
@@ -47,7 +112,9 @@ function repeatStr (n, s) {
   repeatStr(5, "I");
 _________________________________________________________
 Count the number of Duplicates
-Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that 
+occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase 
+and lowercase) and numeric digits.
 
 Example
 "abcde" -> 0 # no characters repeats more than once
