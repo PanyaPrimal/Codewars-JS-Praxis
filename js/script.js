@@ -1,6 +1,46 @@
 
 /** 
 _________________________________________________________
+
+Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative 
+or non-integer. If the array does not contain any numbers then you should return 0.
+
+Examples
+Input: [1, 5.2, 4, 0, -1]
+Output: 9.2
+
+Sol:
+function sum (numbers) {
+    console.log(numbers.reduce((a, b) => a + b, 0));
+};
+let test = [1, 5.2, 4, 0, -1];
+sum(test);
+_________________________________________________________
+5.Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the 
+string should be retained.
+
+Examples
+"This is  an example!" ==> "sihT si na !elpmaxe"
+"double  spaces"      ==> "elbuod  secaps"
+
+Sol:
+function reverseWords(str) {
+    let result = str.split(' ').reverse().join(' ').split('').reverse().join('');
+    console.log(result)
+  }
+  let test = "This is  an example!";
+  reverseWords(test);
+_________________________________________________________
+4. 
+It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a 
+string. You're given one parameter, the original string. You don't have to worry with strings with less than two 
+characters.
+
+Sol:
+function removeChar(str){
+    return str.slice(1, -1)
+  };
+_________________________________________________________
 3. Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever 
 you are employed and the second parameter, vacation is true whenever you are on vacation.
 
