@@ -1,8 +1,49 @@
 
 /** 
 _________________________________________________________
+9.This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
 
-Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative 
+Sol:
+function simpleMultiplication(number) {
+    number%2 == 1 ? console.log(test*9) : console.log(test*8);
+}
+function simpleMultiplication(n) {
+    return n * (n % 2 ? 9 : 8);
+}
+let test = 5;
+simpleMultiplication(test);
+_________________________________________________________
+8.Given two integers a and b, which can be positive or negative, find the sum of all the integers between 
+and including them and return it. If the two numbers are equal return a or b.
+Note: a and b are not ordered!
+(-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+
+Sol:
+let test = (-1, 2);
+function GetSum( a,b ){
+   if (a == b) return a;
+   else if (a < b) return a + GetSum(a+1, b);
+   else return a + GetSum(a-1,b);
+}
+_________________________________________________________
+7.Description
+We need a function that can transform a string into a number. What ways of achieving this do you know?
+
+Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of
+an integral number.
+
+Sol:
+var stringToNumber = function(str){
+    return +str;
+}
+
+var stringToNumber = function(str){
+  return parseInt(str);
+}
+
+_________________________________________________________
+
+6. Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative 
 or non-integer. If the array does not contain any numbers then you should return 0.
 
 Examples
