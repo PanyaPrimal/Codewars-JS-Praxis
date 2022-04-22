@@ -1,5 +1,57 @@
 
+
 /**
+_________________________________________________________
+15. Code as fast as you can! You need to double the integer and 
+return it.
+
+Sol:
+function doubleInteger(i) {
+  return i*2;
+}
+_________________________________________________________
+14. Complete the square sum function so that it squares each number passed into it and then sums 
+the results together.
+
+For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+
+
+Sol:
+let test1 = [1,2];
+let test2 = [0, 3, 4, 5];
+
+function squareSum(numbers) {
+    return numbers.reduce(function(sum, n) {
+        return (n*n) + sum;
+      }, 0);
+}
+
+_________________________________________________________
+13. 
+Your task is to create the functionisDivideBy (or is_divide_by) to check if an integer number is 
+divisible by both integers a and b.
+
+A few cases:
+
+
+(-12, 2, -6)  ->  true
+(-12, 2, -5)  ->  false
+
+(45, 1, 6)    ->  false
+(45, 5, 15)   ->  true
+
+(4, 1, 4)     ->  true
+(15, -5, 3)   ->  true
+
+
+Sol:    
+function isDivideBy(number, a, b) {
+    if (Number.isInteger(number / a) && Number.isInteger(number / b)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 _________________________________________________________
 12.You were camping with your friends far away from home, but when it's time to go back, you 
 realize that your fuel is running out and the nearest pump is 50 miles away! You know that on 
