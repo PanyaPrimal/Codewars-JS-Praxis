@@ -2,6 +2,81 @@
 
 /**
 _________________________________________________________
+18.Given an array of integers.
+
+Return an array, where the first element is the count of positives numbers and the second element 
+is sum of negative numbers. 0 is neither positive nor negative.
+
+If the input is an empty array or is null, return an empty array.
+For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], 
+you should return [10, -65].
+Sol:
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15];
+
+function countPositivesSumNegatives(input) {
+    if (input == null || input.length == 0)
+      return [];
+    
+    var positive = 0;
+    var negative = 0;
+    
+    for (var i=0, l=input.length; i<l; ++i)
+    {
+      if (input[i] > 0)
+        ++ positive;
+      else
+        negative += input[i];
+    }
+    
+    return [positive, negative];
+}
+countPositivesSumNegatives(arr);
+
+_________________________________________________________
+17.Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off 
+your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+
+Write a code that gives out the total amount for different days(d).
+
+Sol:
+function rentalCarCost(d) {
+    let dayOfrent = 40;
+    let threeDaysOff = 20;
+    let sevenDaysOff = 50;
+
+    let totalAmount = d*dayOfrent;
+    if (3 <= d && d < 7) {
+        return totalAmount - threeDaysOff;
+    } else if (d >= 7) {
+        return totalAmount - sevenDaysOff;
+    } else {
+        return totalAmount;
+    }
+// return result = (3 <= d && d < 7) ? d*40-20 : (d >= 7) ? d*40-50 : d*40;
+}
+_________________________________________________________
+16.
+Ben has a very simple idea to make some profit: he buys something and sells it again. Of 
+course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same 
+price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
+
+Task
+Write a function that returns both the minimum and maximum number of the given list/array.
+
+Examples
+minMax([1,2,3,4,5])   == [1,5]
+minMax([2334454,5])   == [5, 2334454]
+minMax([1])           == [1, 1]
+
+Sol:
+let test = [1,2,3,4,5];
+function minMax(arr){
+    return [Math.min.apply(null, arr), Math.max.apply(null, arr)]; 
+    // return [Math.min(...arr), Math.max(...arr)];
+  }
+
+minMax(test);
+_________________________________________________________
 15. Code as fast as you can! You need to double the integer and 
 return it.
 
