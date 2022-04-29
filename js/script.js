@@ -1,6 +1,45 @@
 
-
 /**
+21. In this simple exercise, you will create a program that will take two lists of integers, 
+a and b. Each list will consist of 3 positive integers above 0, representing the dimensions of 
+cuboids a and b. You must find the difference of the cuboids' volumes regardless of which is 
+bigger.
+For example, if the parameters passed are ([2, 2, 3], [5, 4, 1]), the volume of a is 12 and the 
+volume of b is 20. Therefore, the function should return 8.
+Your function will be tested with pre-made examples as well as random ones.
+If you can, try writing it in one line of code.
+
+Sol:
+function findDifference(a, b) {
+    return Math.abs(a.reduce((a,b)=>a*b))-(b.reduce((a,b)=>a*b));
+}
+_________________________________________________________
+20. Given an array of integers as strings and numbers, return the sum of the array values as if all 
+were numbers.
+
+Return your answer as a number.
+
+Sol:
+function sumMix(x){
+    let arr = [];
+    for (let i = 0; i < x.length; i++) {
+       arr.push(Number.parseInt(x[i]));
+    }
+    console.log(arr.reduce((a,b)=>a+b));
+//return x.map(a => +a).reduce((a, b) => a + b);
+}
+sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]);
+_________________________________________________________
+19. Very simple, given an integer or a floating-point number, find its opposite.
+
+Examples:
+1: -1
+-34: 34
+Sol:
+function opposite(number) {
+  return -number;
+}
+_________________________________________________________
 _________________________________________________________
 18.Given an array of integers.
 
