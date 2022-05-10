@@ -1,5 +1,75 @@
 
 /**
+24.Your start-up's BA has told marketing that your website has a large audience in Scandinavia and surrounding 
+countries. Marketing thinks it would be great to welcome visitors to the site in their own language. Luckily you 
+already use an API that detects the user's location, so this is an easy win.
+
+The Task
+Think of a way to store the languages as a database (eg an object). The languages are listed below so you can copy and paste!
+Write a 'welcome' function that takes a parameter 'language' (always a string), and returns a greeting - if you 
+have it in your database. It should default to English if the language is not in the database, or in the event of 
+an invalid input.
+
+Sol:
+let GreetingsDB = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+}
+function greet(language) {
+
+    return GreetingsDB[language] || "Welcome";
+}
+greet(flemish);
+_____________________________________________________
+23.Take an array and remove every second element from the array. Always keep the first element and start 
+removing with the next element.
+Example:
+["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+None of the arrays will be empty, so you don't have to worry about that!
+
+Sol:
+function removeEveryOther(arr){
+    console.log(arr.filter(function(elem, index) {
+      return index % 2 === 0;
+    }));
+}
+let arr = [1,2,3,4,5,6,7,8,9,10];
+removeEveryOther(arr);
+_________________________________________________________
+22. Create a function with two arguments that will return an array of the first (n) multiples of (x).
+Assume both the given number and the number of times to count will be positive numbers greater than 0.
+Return the results as an array (or list in Python, Haskell or Elixir).
+Examples:
+countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+
+Sol:
+
+function countBy(x, n) {
+    let z = [];
+
+    for (let i = 0; i < n; i++) {
+        z.unshift(n*x-x*i)
+     }
+    console.log('result', z);
+}
+countBy(4,15);
+
+_________________________________________________________
 21. In this simple exercise, you will create a program that will take two lists of integers, 
 a and b. Each list will consist of 3 positive integers above 0, representing the dimensions of 
 cuboids a and b. You must find the difference of the cuboids' volumes regardless of which is 
