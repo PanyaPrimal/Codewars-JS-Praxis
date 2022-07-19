@@ -1,5 +1,165 @@
 
 /**
+30.Count the number of divisors of a positive integer n.
+
+Random tests go up to n = 500000.
+
+Examples (input --> output)
+4 --> 3 (1, 2, 4)
+5 --> 2 (1, 5)
+12 --> 6 (1, 2, 3, 4, 6, 12)
+30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30)
+
+Sol:
+function getDivisorsCnt(n){
+    let counter = 0;
+
+    for(let i = 0; i <= n; i++) {
+        if(n % i == 0){
+            counter++
+        }
+    }
+    console.log(counter);
+
+}
+
+getDivisorsCnt(30);
+
+_____________________________________________________
+29.Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+Examples:
+
+solution('abc', 'bc') // returns true
+solution('abc', 'd') // returns false
+
+Sol:
+
+const solution = (str, ending) => str.endsWith(ending)
+
+console.log(solution('abc', 'bc'));
+
+_____________________________________________________
+28.Given three integers a ,b ,c, return the largest number obtained after inserting the following operators and brackets: +, *, ()
+In other words , try every combination of a,b,c with [*+()] , and return the Maximum Obtained
+Example
+With the numbers are 1, 2 and 3 , here are some ways of placing signs and brackets:
+
+1 * (2 + 3) = 5
+1 * 2 * 3 = 6
+1 + 2 * 3 = 7
+(1 + 2) * 3 = 9
+So the maximum value that you can obtain is 9.
+
+Sol:
+const expressionMatter = (a,b,c) => [a*(b+c),a*b*c,a+b*c,(a+b)*c,a+b+c,a*b+c].sort((x,y) => x-y).reverse()[0];
+\
+const expressionMatter = (a,b,c) => Math.max(a*(b+c),a*b*c,a+b*c,(a+b)*c,a+b+c,a*b+c);
+
+console.log(expressionMatter(1,2,3));
+_____________________________________________________
+
+27.Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of
+completed projects.
+
+This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
+
+This function should return a number (final grade). There are four types of final grades:
+
+100, if a grade for the exam is more than 90 or if a number of completed projects more than 10.
+90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
+75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
+0, in other cases
+Examples(Inputs-->Output):
+
+100, 12 --> 100
+99, 0 --> 100
+10, 15 --> 100
+
+85, 5 --> 90
+
+55, 3 --> 75
+
+55, 0 --> 0
+20, 2 --> 0
+
+Sol:
+function finalGrade (exam, projects) {
+   
+    if(exam > 90 || projects > 10){console.log(100)}
+    else if(exam > 75 && projects >= 5){console.log(90)}
+    else if(exam > 50 && projects >= 2){console.log(75)}
+    else console.log(0);
+}
+
+finalGrade(60,5)
+/
+const finalGrade = (exam, projects) => exam > 90 || projects > 10 ? console.log(100) : 
+exam > 75 && projects >= 5 ? console.log(90) : 
+exam > 50 && projects >= 2 ? console.log(75) : 
+0;
+
+
+_____________________________________________________
+26.I have a cat and a dog.
+
+I got them at the same time as kitten/puppy. That was humanYears years ago.
+
+Return their respective ages now as [humanYears,catYears,dogYears]
+
+NOTES:
+
+humanYears >= 1
+humanYears are whole numbers only
+Cat Years
+15 cat years for first year
++9 cat years for second year
++4 cat years for each year after that
+Dog Years
+15 dog years for first year
++9 dog years for second year
++5 dog years for each year after that
+
+Sol:
+var humanYearsCatYearsDogYears = function(humanYears) {
+    const firstYear = 15;
+    const secondYear = 9;
+    const catYears = 4;
+    const dogYears = 5;
+
+
+    if(humanYears == 1){console.log([humanYears,firstYear,firstYear])}
+    else if(humanYears == 2){console.log([humanYears,firstYear+secondYear,firstYear+secondYear])}
+    else if(humanYears > 2){console.log([humanYears,firstYear+secondYear+(humanYears-2)*catYears,firstYear+secondYear+(humanYears-2)*dogYears])};
+}
+
+humanYearsCatYearsDogYears(10);
+
+//
+const humanYearsCatYearsDogYears = humanYears => [
+  humanYears,
+  ( humanYears - 1 ? 16 : 11 ) + 4 * humanYears,
+  ( humanYears - 1 ? 14 : 10 ) + 5 * humanYears,
+];
+
+
+_____________________________________________________
+
+25. You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+Complete the method which accepts such an array, and returns that single different number.
+
+The input array will always be valid! (odd-length >= 3)
+
+Sol:
+let arr = [17, 17, 3, 17, 17, 17, 17];
+function stray(numbers){
+    for (var i in numbers){
+       if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])){console.log(numbers[i])}
+    }
+  }
+  
+stray(arr);
+_____________________________________________________
 24.Your start-up's BA has told marketing that your website has a large audience in Scandinavia and surrounding 
 countries. Marketing thinks it would be great to welcome visitors to the site in their own language. Luckily you 
 already use an API that detects the user's location, so this is an easy win.
