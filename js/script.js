@@ -1,5 +1,69 @@
 
+
 /**
+31.
+
+Sol:
+
+_____________________________________________________
+31.
+
+Sol:
+
+_____________________________________________________
+31.
+
+Sol:
+
+_____________________________________________________
+31.
+
+Sol:
+
+_____________________________________________________
+
+31.The goal of this exercise is to convert a string to a new string where
+ each character in the new string is "(" if that character appears only 
+ once in the original string, or ")" if that character appears more than 
+ once in the original string. Ignore capitalization when determining if a 
+ character is a duplicate.
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))((" 
+Sol:
+function duplicateEncode(word){
+    let str = word.toLowerCase();
+    let unique = '';
+    for (let i =0; i < word.length; i++) {
+        if (str.lastIndexOf(str[i]) === str.indexOf(str[i])) {
+            unique += '(';
+        }
+        else {
+            unique += ')';
+        }
+    }
+    console.log(unique);
+}
+
+duplicateEncode('CrAAppppmaaan');
+_____________________________________________________
+31.In this Kata we are passing a number (n) into a function.
+Your code will determine if the number passed is even (or not).
+The function needs to return either a true or false.
+Numbers may be positive or negative, integers or floats.
+Floats with decimal part non equal to zero are considered UNeven for this kata.
+
+Sol:
+
+function testEven(n) {
+    console.log(n%2 ? false : true)
+}
+
+testEven(9);
+_____________________________________________________
+
+ 
 30.Count the number of divisors of a positive integer n.
 
 Random tests go up to n = 500000.
