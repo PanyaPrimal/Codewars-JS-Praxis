@@ -1,28 +1,145 @@
 
 
 /**
-31.
+_____________________________________________________
+40.
 
 Sol:
-
 _____________________________________________________
-31.
+39.
 
 Sol:
-
 _____________________________________________________
-31.
+38.he Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like 
+your help with an application form that will tell prospective members which category they will be placed.
+
+To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet 
+club, handicaps range from -2 to +26; the better the player the lower the handicap.
+
+Input
+Input will consist of a list of pairs. Each pair contains information for a single potential member. 
+Information consists of an integer for the person's age and an integer for the person's handicap.
+
+Output
+Output will consist of a list of string values (in Haskell and C: Open or Senior) stating whether the 
+respective member is to be placed in the senior or open category.
+
+Example
+input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
+output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 
 Sol:
+let obj = [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9], [55,24]];
 
+function openOrSenior(data){
+    let res = [];
+
+    for(let i = 0; i < data.length; i++) {
+        if(data[i][0] > 54 && data[i][1] > 7) {
+            res.push('Senior')
+        } else res.push('Open')
+    }
+    console.log(res);
+    
+}
+openOrSenior(obj);
 _____________________________________________________
-31.
+37. Write a function that takes an array of words and smashes them together into a sentence and returns 
+the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces 
+between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+Sol:
+let a = ['hello', 'world', 'this', 'is', 'great'];
+function smash (words) {
+    return words.join(' ')};
+smash(a);
+_____________________________________________________
+36.The first century spans from the year 1 up to and including the year 100, the second century - 
+from the year 101 up to and including the year 200, etc.
+
+Task
+Given a year, return the century it is in.
+
+Examples
+1601 --> 17
+2000 --> 20
 
 Sol:
+const century = year => Math.ceil(year/100)
 
+  century(1601);
+  century(1900);
+/**
+_____________________________________________________
+35.Build a function that returns an array of integers from n to 1 where n>0.
+
+Example : n=5 --> [5,4,3,2,1]
+
+Sol:
+const reverseSeq = n => {
+    let arr = []
+    while (n > 0) {
+        arr.push(n);
+        n--;
+    }
+    console.log(arr);
+};
+
+  reverseSeq(5);
+_____________________________________________________
+34.Bob needs a fast way to calculate the volume of a cuboid with three values: the length, width and 
+height of the cuboid. Write a function to help Bob with this calculation.
+
+Sol:
+class Kata {
+    static getVolumeOfCuboid(length, width, height) {
+      console.log(length*width*height);
+    }
+}
+Kata.getVolumeOfCuboid(6.3,2,5);
+_____________________________________________________
+33.A child is playing with a ball on the nth floor of a tall building. The height of this floor, h, is known.
+He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).
+His mother looks out of a window 1.5 meters from the ground.
+How many times will the mother see the ball pass in front of her window (including when it's falling and bouncing?
+
+Three conditions must be met for a valid experiment:
+Float parameter "h" in meters must be greater than 0
+Float parameter "bounce" must be greater than 0 and less than 1
+Float parameter "window" must be less than h.
+If all three conditions above are fulfilled, return a positive integer, otherwise return -1.
+
+Note:
+The ball can only be seen if the height of the rebounding ball is strictly greater than the window parameter.
+
+Examples:
+- h = 3, bounce = 0.66, window = 1.5, result is 3
+
+- h = 3, bounce = 1, window = 1.5, result is -1 
+
+(Condition 2) not fulfilled).
+
+Sol:
+function bouncingBall(h,  bounce,  window) {
+    let result = 0;
+    do {
+        if (h <= 0 || bounce >= 1 || bounce <= 0 || window >= h)
+            return -1;
+        if (h > window)
+            result++;
+        h = h * bounce;
+        if (h > window)
+            result++;
+
+    } while (h > window);
+
+    console.log(result);
+}
+
+bouncingBall(3, 0.66, 1.5);
 _____________________________________________________
 
-31.The goal of this exercise is to convert a string to a new string where
+32.The goal of this exercise is to convert a string to a new string where
  each character in the new string is "(" if that character appears only 
  once in the original string, or ")" if that character appears more than 
  once in the original string. Ignore capitalization when determining if a 
