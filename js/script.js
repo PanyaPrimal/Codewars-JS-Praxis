@@ -1,14 +1,74 @@
 
 
+
+
+
+
 /**
 _____________________________________________________
-40.
+42.
 
 Sol:
 _____________________________________________________
-39.
+41.You get an array of numbers, return the sum of all of the positives ones.
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+Note: if there is nothing to sum, the sum is default to 0.
 
 Sol:
+let example = [-1, -2,-3, -4,-5];
+function positiveSum(arr) {
+    function checkPositive(num) {
+        return num >= 0;
+    }
+    if (!arr.length) { 
+        console.log(0);
+    } else if (arr.filter(checkPositive).length > 0) {
+        console.log(arr.filter(checkPositive).reduce((a,b)=>a+b));
+    } else console.log(0);
+}
+positiveSum(example);
+_____________________________________________________
+40.Summation
+Write a program that finds the summation of every number from 1 to num. The number will always be a 
+positive integer greater than 0.
+
+For example:
+
+summation(2) -> 3
+1 + 2
+
+summation(8) -> 36
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+
+Sol:
+const summation = n => n * (n + 1) / 2;
+
+var summation = function (num) {
+    let result = [];
+    for(let i = 0; i < num+1; i++) {
+        result.push(i);
+    }
+    console.log(result.reduce((a,b)=>a+b));
+  };
+
+  summation(8);
+_____________________________________________________
+39.This function should test if the factor is a factor of base.
+
+Return true if it is a factor or false if it is not.
+
+About factors
+Factors are numbers you can multiply together to get another number.
+
+2 and 3 are factors of 6 because: 2 * 3 = 6
+
+You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
+You can use the mod operator (%) in most languages to check for a remainder
+For example 2 is not a factor of 7 because: 7 % 2 = 1
+
+Sol:
+let checkForFactor = (base, factor) => (base%factor === 0 ? true : false);
+checkForFactor(11,2)
 _____________________________________________________
 38.he Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like 
 your help with an application form that will tell prospective members which category they will be placed.
