@@ -1,14 +1,73 @@
 
 
-
-
-
-
 /**
 _____________________________________________________
-42.
+45.
 
 Sol:
+_____________________________________________________
+44.Given a list and a number, create a new list that contains each number of list
+at most N times, without reordering.
+For example if the input number is 2, and the input list is [1,2,3,1,2,1,2,3],
+you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 beingin 
+the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
+With list [20,37,20,21] and number 1, the result would be [20,37,21].
+
+Sol:
+let ex = [1,2,2,3,1,2,1,2,3,4];
+
+
+let deleteNth = (arr, n) => {
+   let m = {};
+   console.log (arr.filter( v => (m[v] = m[v]+1||1) <= n ));
+}
+
+deleteNth(ex, 2);
+_____________________________________________________
+43.The main idea is to count all the occurring characters in a string. If you 
+have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+What if the string is empty? Then the result should be empty object literal, 
+{}.
+
+Sol: 
+function count (string) {  
+    let result = [...string].reduce((a, e) => { a[e] = a[e] ? a[e] + 1 : 1; return a }, {}); 
+    console.log(result); 
+};
+
+count('abadtgsr55555shdt');
+_____________________________________________________
+42.You probably know the "like" system from Facebook and other pages. 
+People can "like" blog posts, pictures or other items. We want to create 
+the text that should be displayed next to such an item.
+
+Implement the function which takes an array containing the names of people 
+that like an item. It must return the display text as shown in the examples:
+
+[]                                -->  "no one likes this"
+["Peter"]                         -->  "Peter likes this"
+["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+
+Sol:
+let ex1 = [];
+let ex2 = ["Alex", "Jacob", "Mark", "Max"] ;
+function likes(names) {
+    if (names.length == 0) {
+        return "no one likes this"
+    } else if(names.length == 1) {
+        return names[0]+" likes this"
+    } else if(names.length == 2) {
+        return names[0] + " and " + names[1] + " like this"
+    } else if(names.length == 3) {
+        return names[0] + ", " + names[1] + " and " + names[2] + " like this"
+    }  else if(names.length >= 4) {
+        return names[0] + ", " + names[1] + " and " + (names.length-2) + " others like this"
+    } 
+  }
+likes(ex2);
 _____________________________________________________
 41.You get an array of numbers, return the sum of all of the positives ones.
 Example [1,-4,7,12] => 1 + 7 + 12 = 20
@@ -27,6 +86,8 @@ function positiveSum(arr) {
     } else console.log(0);
 }
 positiveSum(example);
+
+return arr.reduce((a,b)=> a + (b > 0 ? b : 0),0);
 _____________________________________________________
 40.Summation
 Write a program that finds the summation of every number from 1 to num. The number will always be a 
