@@ -1,10 +1,60 @@
 
-
 /**
 _____________________________________________________
-45.
+48.
 
 Sol:
+
+_____________________________________________________
+47.Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+
+Examples:
+
+Sol:
+const binaryArrayToNumber = arr => {
+  return parseInt(arr.join(""), 2)
+};
+
+let ex = [1, 1, 0, 1];
+
+const binaryArrayToNumber = arr => {
+    let result = [];
+        (arr[0] == 1) ? result.push("8") : 0;
+        (arr[1] == 1) ? result.push("4") : 0;
+        (arr[2] == 1) ? result.push("2") : 0;
+        (arr[3] == 1) ? result.push("1") : 0;
+    console.log(result.map(Number).reduce((a,b) => a+b));
+};
+binaryArrayToNumber(ex);
+_____________________________________________________
+46.Your classmates asked you to copy some paperwork for them. You know that there are 
+'n' classmates and the paperwork has 'm' pages.
+Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+n= 5, m=5: 25
+n=-5, m=5:  0
+
+Sol:
+let paperwork = (n, m) => {
+    return n > 0 && m > 0 ? n*m : 0;
+}
+
+paperwork(5,5);
+_____________________________________________________
+45.Timmy & Sarah think they are in love, but around where they live, they will only 
+know once they pick a flower each. If one of the flowers has an even number of petals 
+and the other has an odd number of petals it means they are in love.
+
+Write a function that will take the number of petals of each flower and return true 
+if they are in love and false if they aren't.
+
+Sol:
+function lovefunc(flower1, flower2){
+    if (flower1%2 != flower2%2) {
+        console.log(true);
+    } else console.log(false);
+}
+lovefunc(3, 2);
 _____________________________________________________
 44.Given a list and a number, create a new list that contains each number of list
 at most N times, without reordering.
