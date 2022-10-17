@@ -1,9 +1,57 @@
 
 /**
 _____________________________________________________
-48.
+51.
 
 Sol:
+_____________________________________________________
+50.Complete the function that takes a non-negative integer n as input, and returns a list of 
+all the powers of 2 with the exponent ranging from 0 to n ( inclusive ).
+Examples
+n = 0  ==> [1]        # [2^0]
+n = 1  ==> [1, 2]     # [2^0, 2^1]
+n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
+
+Sol:
+function powersOfTwo(n) {
+    return Array.from({length: n + 1}, (v, k) => 2 ** k);
+  }
+_____________________________________________________
+49.Terminal game move function
+In this game, the hero moves from left to right. The player rolls the dice and moves the number 
+of spaces indicated by the dice two times.
+
+Create a function for the terminal game that takes the current position of the hero and the roll 
+(1-6) and return the new position.
+
+Example:
+move(3, 6) should equal 15
+
+Sol:
+function move (position, roll) {
+  return position + roll + roll
+}
+_____________________________________________________
+48.Your task is to sort a given string. Each word in the string will contain a single number. 
+This number is the position the word should have in the result.
+Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+If the input string is empty, return an empty string. The words in the input String will only 
+contain valid consecutive numbers.
+
+Examples
+"is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+"4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+""  -->  ""
+
+Sol:
+let example = "is2 Thi1s T4est 3a";
+function order(words){
+    return words.split(' ').sort(function(a, b) {
+        return a.match(/\d/) - b.match(/\d/);
+    }).join(' ');
+}
+order(example);
 
 _____________________________________________________
 47.Given an array of ones and zeroes, convert the equivalent binary value to an integer.
