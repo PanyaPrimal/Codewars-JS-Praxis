@@ -1,9 +1,90 @@
 
 /**
 _____________________________________________________
-51.
+54.
 
 Sol:
+_____________________________________________________
+53.Clock shows h hours, m minutes and s seconds after midnight.
+Your task is to write a function which returns the time since midnight in milliseconds.
+
+Sol:
+function past(h, m, s){
+    let res1=0, res2=0, res3=0;
+    h > 0 ? res1=h*3600000 : 0;
+    m > 0 ? res2=m*60000 : 0;
+    s > 0 ? res3=s*1000 : 0;
+    return (res1+res2+res3);
+}
+return ((h*3600)+(m*60)+s)*1000;
+past(1,1,1);
+_____________________________________________________
+52.You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived 
+ten minutes too early to an appointment, so you decided to take the opportunity to go for a short 
+walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you 
+press the button it sends you an array of one-letter strings representing directions to walk 
+(eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction) 
+and you know it takes you one minute to traverse one city block, so create a function that 
+will return true if the walk the app gives you will take you exactly ten minutes 
+(you don't want to be early or late!) and will, of course, return you to your starting point. 
+Return false otherwise.
+
+Note: you will always receive a valid array containing a random assortment of direction letters 
+('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's 
+standing still!).
+
+Sol:
+let example = ['n','s','w','n','s','n','s','s','n'];
+
+function isValidWalk(walk) {
+    if(walk.length != 10) {
+        return false;
+    } else {
+        let n = 0;
+        let s = 0;
+        let w = 0;
+        let e = 0;
+        
+        for (let i=0; i <= walk.length; i++) {
+            if(walk[i] == 'n') {
+                n++;
+            } else if(walk[i] == 's') {
+                s++;
+            } else if(walk[i] == 'w') {
+                w++;
+            } else if(walk[i] == 'e') {
+                e++;
+            } else if(i <= 1) {
+                return false;
+            }
+        }
+
+        if(n == s && w == e) {
+            return true;
+        } else return false;
+    }
+}
+isValidWalk(example);
+_____________________________________________________
+51.Your task is to make function, which returns the sum of a sequence of integers.
+
+The sequence is defined by 3 non-negative values: begin, end, step (inclusive).
+
+If begin value is greater than the end, function should returns 0
+
+Examples
+
+2,2,2 --> 2
+2,6,2 --> 12 (2 + 4 + 6)
+1,5,1 --> 15 (1 + 2 + 3 + 4 + 5)
+1,5,3  --> 5 (1 + 4)
+
+Sol:
+const sequenceSum = (begin, end, step) => {
+    if(begin>end) {return 0};
+    console.log(begin + sequenceSum(begin+step, end, step));
+};
+sequenceSum(2,6,3)
 _____________________________________________________
 50.Complete the function that takes a non-negative integer n as input, and returns a list of 
 all the powers of 2 with the exponent ranging from 0 to n ( inclusive ).
